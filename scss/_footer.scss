@@ -1,0 +1,185 @@
+
+.main-footer{
+  background:#1F381F;
+  padding:120px 0 170px 0;
+  color:#fff;
+
+  .footer-top{
+    margin-bottom:70px;
+  }
+
+  .footer-center{
+    justify-content: center;
+
+    h1,h2,h3,h4{
+      font-size: 30px;
+      color:#fff;
+      margin-bottom:10px;
+    }
+
+    ul{
+      width: 100%;
+      li{
+        width: 100%;
+        background:url('img/icons/arrow-right-primary.svg') no-repeat left center/18px 11px;
+        padding-left:30px;
+
+        a{
+          transition: padding-left .2s ease-out;
+          width: 100%;
+        }
+
+        a:hover{
+          padding-left:10px;
+        }
+
+      }
+
+    }
+
+  }
+
+  .footer-bottom{
+    margin-top:70px;
+
+    .font-display-2{
+      margin-bottom:15px;
+      line-height: 1;
+    }
+
+      ul:not(.wp-block-social-links){
+        list-style: none;
+        text-align: center;
+        margin-top:40px;
+        padding:0;
+        margin-bottom:0;
+        li{
+          display: inline-block;
+
+          a{
+            color:#fff;
+          }
+
+          &:after{
+            content:" | ";
+            margin:0 15px;
+          }
+
+          &:last-child:after{
+            display: none;
+          }
+
+        }
+      }
+  }
+
+  @include for-screen-xs-max{
+    .footer-bottom ul:not(.wp-block-social-links){
+      li{
+        display: block;
+        text-align:center;
+        margin-bottom:15px;
+        &:after{
+          display:none;
+        }
+      }
+    }
+  }
+
+}
+
+#g1,#g2,#g3,#g4,#g5{
+  display: block !important;
+  position: absolute;
+  transform-origin: center;
+  z-index:10;
+  pointer-events: none;
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+#g1{
+  left:calc(100% - 125px);
+  width:250px;
+  top:100vh;
+}
+
+#g2{
+  left:-175px;
+  width:250px;
+  top:33%;
+}
+
+#g3{
+  left:-75px;
+  width:150px;
+  top:66%;
+}
+
+#g4{
+  left:calc(100% - 100px);
+  width:150px;
+  top:75%;
+}
+
+#g5{
+  left:calc(100% - 100px);
+  width:150px;
+  top:40%;
+}
+
+
+#scroll-to-top{
+  cursor: pointer;
+  color:#fff;
+  background:$color-primary url('img/icons/chevron-up-w.svg') no-repeat center center/16px auto;
+  text-indent: -9999px;
+  width:40px;
+  height:40px;
+  position: fixed;
+  bottom:20px;
+  left: 20px;
+  transition: opacity .3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+  z-index:100;
+}
+
+body.scrolled #scroll-to-top{
+  opacity: 1 !important;
+  pointer-events: all;
+}
+
+@include for-screen-lg-max{
+  #g1{
+    left:calc(100% - 75px);
+    width: 200px;
+    top:105vh;
+  }
+
+  #g2{
+    width: 175px;
+    left:-125px;
+  }
+
+  #g3{
+    width: 125px;
+  }
+
+  #g4, #g5{
+    width: 100px;
+    left:calc(100% - 50px);
+  }
+
+
+}
+
+
+@include for-screen-sm-max{
+  #g1,#g2,#g3,#g4,#g5{
+    display: none !important;
+  }
+}

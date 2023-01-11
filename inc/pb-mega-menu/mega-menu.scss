@@ -1,0 +1,205 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+@import "blocks/megamenu-card/megamenu-card";
+
+@include for-min-size($burger-toggle-off){
+  .primary-nav ul.menu ul{
+    display: none !important;
+  }
+}
+
+#mega-menu-container{
+
+  .mega-menu-item{
+    min-height: 0 !important;
+    //overflow: hidden;
+    //visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top:100%;
+    left:0;
+    //height: 0;
+    z-index:50;
+    transition: opacity .2s ease-in-out;
+    pointer-events: none;
+    width: 100%;
+    background:#fff;
+
+    &:before{
+      content:"";
+      position: absolute;
+      bottom:-30px;
+      left:0;
+      width:100%;
+      height: 203px;
+      background:url("#{$theme-path}/img/separators/menu-separator.png") no-repeat center bottom/cover;
+      //opacity: 0;
+      //transition: opacity .3s ease-out;
+      z-index:0;
+      pointer-events: none;
+    }
+
+    >.container{
+      max-width:1400px;
+    }
+
+    >.container, >.container-wide{
+      margin:0 auto;
+      padding:40px 40px;
+    }
+
+    .submenu-title{
+      font-size:2rem;
+      //font-weight: 500;
+      //letter-spacing: .02em;
+      color:$color-text;
+      line-height: 1;
+      font-family: $font-display;
+      text-transform: uppercase;
+      margin-bottom:25px;
+    }
+/*
+    &:after{
+      content:"";
+      position: absolute;
+      top:0;
+      left:0;
+      height: 10px;
+      width: 100%;
+      background: -moz-linear-gradient(top,  rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+      background: -webkit-linear-gradient(top,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+      background: linear-gradient(to bottom,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d000000', endColorstr='#00000000',GradientType=0 );
+      opacity: .3;
+    }
+*/
+    &.mega-menu-item-active{
+      opacity: 1 !important;
+      height: auto;
+      //visibility: visible;
+      pointer-events: all;
+    }
+
+    >.wp-block-columns{
+      margin:0;
+      justify-content: flex-end;
+    }
+
+    .cards{
+      .card{
+        .inner{
+          padding-bottom:40%;
+        }
+      }
+
+      .card.type-contact{
+        .image img{
+            object-fit: contain;
+            object-position: left bottom;
+        }
+      }
+
+    }
+
+    .mega-menu-right{
+      max-width: 445px;
+    }
+
+    > .wp-block-columns >.wp-block-column{
+      padding:40px 40px;
+    }
+
+    h4,h5{
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: $color-highlight;
+    }
+
+    .icon-list{
+      a{
+        color:inherit;
+      }
+    }
+
+  }
+  
+  @media screen and (max-width:$burger-toggle-on ) {
+    display: none !important;
+  }
+
+  .megamenu-submenu{
+    margin-bottom:20px;
+    ul{
+      padding:0;
+      margin:0;
+      list-style: none;
+
+      li{
+        display:block;
+
+        ul{
+          display:none;
+        }
+      }
+
+      >li{
+
+        padding-left:20px;
+        position: relative;
+        >a{
+          display: block;
+          padding:15px 0px 15px 0px;
+          color:$color-text;
+          font-size: $font-primary;
+          font-weight: $font-weight-primary;
+          text-decoration: none;
+          transition: all .3s ease-in-out;
+          &:hover{
+            padding-left:20px;
+            color:$color-highlight;
+          }
+
+        }
+        &:after{
+          content:"";
+          position:absolute;
+          top:50%;
+          left:0px;
+          margin-top:-1px;
+          transform:translateY(-50%);
+          background-image: url('#{$theme-path}/img/icons/menu-chevron-right.svg');
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          width:6px;
+          height: 10px;
+        }
+        &:last-child{
+
+        }
+
+        &.current-menu-item >a{
+          color:$color-highlight;
+        }
+
+      }
+
+    }
+  }
+
+}
+
+#menu-overlay {
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  position: fixed;
+  pointer-events: none;
+  display:none;
+  background: rgba(40, 40, 39, 0.4);
+  mix-blend-mode: multiply;
+  z-index:10;
+}

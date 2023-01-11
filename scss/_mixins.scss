@@ -1,0 +1,147 @@
+@mixin transition($what){
+	-webkit-transition:0.2s $what ease-in-out;
+	-moz-transition:0.2s $what ease-in-out;
+	-ms-transition:0.2s $what ease-in-out;
+	-o-transition:0.2s $what ease-in-out;
+	transition:0.2s $what ease-in-out;
+}
+
+@mixin border-radius($radius){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-o-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin box-sizing($size){
+	-webkit-box-sizing: $size;
+	-moz-box-sizing: $size;
+	-o-box-sizing: $size;
+	-ms-box-sizing: $size;
+	box-sizing: $size;
+}
+
+@mixin box-shadow(){
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+@mixin background-size($size){
+	-webkit-background-size: $size;
+	-moz-background-size: $size;
+	-ms-background-size: $size;
+	-o-background-size: $size;
+	background-size: $size;
+}
+
+@mixin translate($x,$y){
+	-webkit-transform: translate($x,$y);
+	-moz-transform: translate($x,$y);
+	-ms-transform: translate($x,$y);
+	-o-transform: translate($x,$y);
+	transform: translate($x,$y);
+}
+
+@mixin translateX($translate){
+	-webkit-transform: translateX($translate);
+	-moz-transform: translateX($translate);
+	-ms-transform: translateX($translate);
+	-o-transform: translateX($translate);
+	transform: translateX($translate);
+}
+
+@mixin translateY($translate){
+	-webkit-transform: translateY($translate);
+	-moz-transform: translateY($translate);
+	-ms-transform: translateY($translate);
+	-o-transform: translateY($translate);
+	transform: translateY($translate);
+}
+
+@mixin flex(){
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin for-screen-xs-min {
+	@media (min-width: $screen-xs-min) { @content; }
+}
+@mixin for-screen-xs-max {
+	@media (max-width: $screen-xs-max) { @content; }
+}
+@mixin for-screen-sm-min {
+	@media (min-width: $screen-sm-min) { @content; }
+}
+@mixin for-screen-sm-max {
+	@media (max-width: $screen-sm-max) { @content; }
+}
+@mixin for-screen-md-min {
+	@media (min-width: $screen-md-min) { @content; }
+}
+@mixin for-screen-md-max {
+	@media (max-width: $screen-md-max) { @content; }
+}
+@mixin for-screen-lg-min {
+	@media (min-width: $screen-lg-min) { @content; }
+}
+@mixin for-screen-lg-max {
+	@media (max-width: $screen-lg-max) { @content; }
+}
+@mixin for-screen-xl-min {
+	@media (min-width: $screen-xl-min) { @content; }
+}
+@mixin for-screen-xl-max {
+	@media (max-width: $screen-xl-max) { @content; }
+}
+@mixin for-screen-xxl-min {
+	@media (min-width: $screen-xxl-min) { @content; }
+}
+@mixin for-screen-xxl-max {
+	@media (max-width: $screen-xxl-max) { @content; }
+}
+@mixin for-screen-xxxl-min {
+	@media (min-width: $screen-xxxl-min) { @content; }
+}
+@mixin for-size($size) {
+	@media (max-width: $size) { @content; }
+}
+
+@mixin for-min-size($size) {
+	@media (min-width: $size) { @content; }
+}
+
+@mixin for-between-size($min, $max) {
+	@media (min-width:$min) and (max-width: $max) { @content; }
+}
+
+@mixin word-wrap() {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+}
+
+@mixin cubicTransition($speed) {
+	-webkit-transition: all $speed cubic-bezier(0.645, 0.045, 0.355, 1);
+	-moz-transition: all $speed cubic-bezier(0.645, 0.045, 0.355, 1);
+	-o-transition: all $speed cubic-bezier(0.645, 0.045, 0.355, 1);
+	transition: all $speed cubic-bezier(0.645, 0.045, 0.355, 1); /* easeInOutCubic */
+
+	-webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	-moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	-o-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	transition-timing-function: cubic-bezier(
+									0.645,
+									0.045,
+									0.355,
+									1
+	); /* easeInOutCubic */
+}

@@ -1,0 +1,27 @@
+{
+  "name": "pb/gallery",
+  "title": "Galleri (ufærdig)",
+  "description": "",
+  "category": "pb",
+  "icon": "dashicons-images-alt2",
+  "keywords": ["testimonial", "quote"],
+  "supports": {
+    "anchor" : true
+  },
+  "acf": {
+    "auto": "preview",
+    "renderTemplate": "default.php"
+  },
+  "align": "full",
+  "example" : {
+    "attributes" : {
+      "mode" : "preview",
+      "data" : {
+        "preview_image_help" : {
+          "type" : "boolean",
+          "default" : true
+        }
+      }
+    }
+  }
+}

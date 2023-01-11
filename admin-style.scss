@@ -1,0 +1,68 @@
+@import "scss/variables";
+
+.editor-styles-wrapper .is-root-container{
+  font-family: $font-primary, sans-serif;
+}
+
+div.wp-block{
+
+  max-width:1600px;
+  margin:0;
+
+  .acf-block-fields{
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+}
+
+.block-list-appender{
+  //display: none;
+}
+
+.wp-block-columns .block-list-appender{
+  display:block;
+}
+
+@import "scss/mixins";
+@import "scss/grid";
+@import "scss/buttons";
+@import "scss/footer";
+@import "scss/icons";
+@import 'scss/contact-form';
+
+@import "scss/blocks";
+@import "inc/pb-mega-menu/mega-menu.css";
+
+@import "scss/utilities";
+
+.acf-block-preview{
+  @import "scss/typography";
+}
+
+
+.edit-post-layout .components-notice.is-warning{
+  display:none;
+}
+
+.edit-post-layout .section-featured-page-slider{
+  width: 100%;
+  overflow: hidden;
+  .featured-page-slider{
+    display:flex;
+    padding:25px 0 25px 0;
+    .slide{
+      flex:none;
+      margin-right:25px;
+    }
+  }
+}
+
+.edit-post-layout{
+
+  section .button{
+    background:transparent;
+    border:0;
+  }
+
+}

@@ -1,0 +1,208 @@
+.megamenu-card {
+  position: relative;
+}
+.megamenu-card a {
+  display: block;
+  color: inherit;
+}
+.megamenu-card .background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+.megamenu-card .background-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.8;
+}
+.megamenu-card .content {
+  position: relative;
+  z-index: 1;
+  padding: 0 40px 40px;
+}
+.megamenu-card .title {
+  font-family: "Liquid Embrace", sans-serif;
+  font-size: 3rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.megamenu-card .image {
+  height: 280px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.megamenu-card .image img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+.megamenu-card .btn-primary {
+  margin-top: 20px;
+}
+
+@media (min-width: 1300px) {
+  .primary-nav ul.menu ul {
+    display: none !important;
+  }
+}
+#mega-menu-container .mega-menu-item {
+  min-height: 0 !important;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 50;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+  width: 100%;
+  background: #fff;
+  /*
+      &:after{
+        content:"";
+        position: absolute;
+        top:0;
+        left:0;
+        height: 10px;
+        width: 100%;
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+        background: linear-gradient(to bottom,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d000000', endColorstr='#00000000',GradientType=0 );
+        opacity: .3;
+      }
+  */
+}
+#mega-menu-container .mega-menu-item:before {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  height: 203px;
+  background: url("/wp-content/themes/husforbi/img/separators/menu-separator.png") no-repeat center bottom/cover;
+  z-index: 0;
+  pointer-events: none;
+}
+#mega-menu-container .mega-menu-item > .container {
+  max-width: 1400px;
+}
+#mega-menu-container .mega-menu-item > .container, #mega-menu-container .mega-menu-item > .container-wide {
+  margin: 0 auto;
+  padding: 40px 40px;
+}
+#mega-menu-container .mega-menu-item .submenu-title {
+  font-size: 2rem;
+  color: #282827;
+  line-height: 1;
+  font-family: "Liquid Embrace", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+#mega-menu-container .mega-menu-item.mega-menu-item-active {
+  opacity: 1 !important;
+  height: auto;
+  pointer-events: all;
+}
+#mega-menu-container .mega-menu-item > .wp-block-columns {
+  margin: 0;
+  justify-content: flex-end;
+}
+#mega-menu-container .mega-menu-item .cards .card .inner {
+  padding-bottom: 40%;
+}
+#mega-menu-container .mega-menu-item .cards .card.type-contact .image img {
+  object-fit: contain;
+  object-position: left bottom;
+}
+#mega-menu-container .mega-menu-item .mega-menu-right {
+  max-width: 445px;
+}
+#mega-menu-container .mega-menu-item > .wp-block-columns > .wp-block-column {
+  padding: 40px 40px;
+}
+#mega-menu-container .mega-menu-item h4, #mega-menu-container .mega-menu-item h5 {
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #E85B4D;
+}
+#mega-menu-container .mega-menu-item .icon-list a {
+  color: inherit;
+}
+@media screen and (max-width: 1299px) {
+  #mega-menu-container {
+    display: none !important;
+  }
+}
+#mega-menu-container .megamenu-submenu {
+  margin-bottom: 20px;
+}
+#mega-menu-container .megamenu-submenu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#mega-menu-container .megamenu-submenu ul li {
+  display: block;
+}
+#mega-menu-container .megamenu-submenu ul li ul {
+  display: none;
+}
+#mega-menu-container .megamenu-submenu ul > li {
+  padding-left: 20px;
+  position: relative;
+}
+#mega-menu-container .megamenu-submenu ul > li > a {
+  display: block;
+  padding: 15px 0px 15px 0px;
+  color: #282827;
+  font-size: "Roboto", sans-serif;
+  font-weight: 300;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+#mega-menu-container .megamenu-submenu ul > li > a:hover {
+  padding-left: 20px;
+  color: #E85B4D;
+}
+#mega-menu-container .megamenu-submenu ul > li:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  margin-top: -1px;
+  transform: translateY(-50%);
+  background-image: url("/wp-content/themes/husforbi/img/icons/menu-chevron-right.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 6px;
+  height: 10px;
+}
+#mega-menu-container .megamenu-submenu ul > li.current-menu-item > a {
+  color: #E85B4D;
+}
+
+#menu-overlay {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  pointer-events: none;
+  display: none;
+  background: rgba(40, 40, 39, 0.4);
+  mix-blend-mode: multiply;
+  z-index: 10;
+}
+
+/*# sourceMappingURL=mega-menu.css.map */

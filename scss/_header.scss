@@ -1,0 +1,143 @@
+#header{
+  background:transparent;
+  padding-top:27px;
+  padding-bottom:27px;
+  position: relative;
+  z-index:60;
+  position: fixed;
+  width:100%;
+  top:0;
+  left:0;
+  transition: padding-top .3s ease-out, padding-bottom .3s ease-out, background .3s ease-out;
+
+  .logged-in &{
+    top:32px;
+
+    @include for-size(782px){
+      top:46px;
+    }
+
+  }
+
+
+  >.container, >.container-fluid{
+    display:grid;
+    grid-template-areas: 'nav-left logo nav-right';
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width:$screen-md-max){
+      //grid-template-areas: 'actions nav logo';
+    }
+
+  }
+
+  .header-logo{
+    margin:0 40px;
+  }
+
+  .header-navigation-left{
+    grid-area: nav-left;
+    align-items: stretch;
+  }
+
+  .header-navigation-right{
+    grid-area: nav-right;
+    align-items: stretch;
+    .primary-nav{
+      justify-content: flex-start;
+    }
+  }
+
+  .mobile-menu-toggle{
+    display: none;
+    width:61px;
+    height:61px;
+    border-radius: 50%;
+    background:#fff;
+    align-items: center;
+    justify-content: center;
+    color:$color-primary;
+    cursor: pointer;
+  }
+
+  #logo{
+    a{
+      display:block;
+      color:#fff;
+      transition: color .3s ease-out;
+    }
+    img, svg{
+      vertical-align: middle;
+    }
+  }
+
+  &:before{
+    content:"";
+    position: absolute;
+    bottom:-10px;
+    left:0;
+    width:100%;
+    height: 203px;
+    background:url("#{$theme-path}/img/separators/menu-separator.png") no-repeat center bottom/cover;
+    opacity: 0;
+    transition: opacity .3s ease-out;
+    z-index:0;
+    pointer-events: none;
+  }
+
+  >div{
+    position: relative;
+    z-index: 1;
+  }
+
+  @include for-screen-xxl-max{
+
+  }
+
+
+  @include for-size($burger-toggle-on){
+    padding:11px 0;
+
+    >.container, >.container-fluid {
+      display: grid;
+      grid-template-areas: 'logo actions';
+      justify-content: space-between;
+    }
+
+    .mobile-menu-toggle{
+      display: flex;
+    }
+
+    .header-navigation-left, .header-navigation-right{
+      display: none;
+    }
+
+    .header-logo{
+      margin:0;
+    }
+
+  }
+
+  @include for-min-size($burger-toggle-off){
+
+  }
+
+
+  @include for-screen-xs-max{
+
+  }
+
+}
+
+.scrolled #header, .mega-menu-open #header{
+  //background:#fff;
+  &:before{
+    opacity: 1;
+  }
+  #logo a{
+    color:$color-black;
+  }
+
+}

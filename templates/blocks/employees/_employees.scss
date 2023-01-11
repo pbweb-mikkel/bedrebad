@@ -1,0 +1,12 @@
+.section-default{
+  padding:120px 0;
+
+  @include for-screen-md-max{
+    padding:80px 0;
+  }
+
+  @include for-screen-sm-max{
+    padding:40px 0;
+  }
+
+}
