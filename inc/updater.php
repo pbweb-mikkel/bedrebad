@@ -10,12 +10,14 @@ function automatic_GitHub_updates($data) {
     $repo = 'bedrebad'; // Repository name as it appears in the URL
     // Get the latest release tag from the repository. The User-Agent header must be sent, as per
     // GitHub's API documentation: https://developer.github.com/v3/#user-agent-required
-    $file = @json_decode(@file_get_contents('https://api.github.com/repos/'.$user.'/'.$repo.'/releases/latest', false,
+    $file = json_decode(file_get_contents('https://api.github.com/repos/'.$user.'/'.$repo.'/releases/latest', false,
         stream_context_create(['http' => ['header' => "User-Agent: ".$user."\r\n"]])
     ));
+
     if($file) {
         $update = filter_var($file->tag_name, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         // Only return a response if the new version number is higher than the current version
+        new PB_Log('updater', $update, $current);
         if($update > $current) {
             $data->response[$theme] = array(
                 'theme'       => $theme,
