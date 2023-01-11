@@ -17,7 +17,7 @@ function automatic_GitHub_updates($data) {
     if($file) {
         $update = filter_var($file->tag_name, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         // Only return a response if the new version number is higher than the current version
-        new PB_Log('updater', $update, $current);
+        new PB_Log('updater', $update, $file->zipball_url);
         if($update > $current) {
             $data->response[$theme] = array(
                 'theme'       => $theme,
@@ -25,7 +25,7 @@ function automatic_GitHub_updates($data) {
                 // This way you can still use tags like v1.1 or ver1.1 if desired
                 'new_version' => $update,
                 'url'         => 'https://github.com/'.$user.'/'.$repo,
-                'package'     => $file->assets[0]->browser_download_url,
+                'package'     => $file->zipball_url,
             );
         }
     }
