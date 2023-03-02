@@ -1,6 +1,6 @@
 <?php
 
-require_once 'inc/updater.php';
+require_once 'inc/pb_updater.php';
 require_once 'inc/class/class-pb-log.php';
 require_once 'inc/essentials.php';
 require_once 'inc/nav-menu.php';
